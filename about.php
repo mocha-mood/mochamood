@@ -40,5 +40,13 @@
         <h2>Our Vision</h2>
         <p>We're excited to launch a unique coffee shop experience that blends the convenience of online ordering with the pleasure of enjoying freshly made coffee and snacks. Our vision is to revolutionize the traditional coffee shop model by introducing a seamless, cashier-free service that prioritizes efficiency and customer satisfaction.</p>
     </section>
+    <section id="how-it-works">
+        <h2>How It Works</h2>
+        <ul>
+            <li><strong>Easy Online Ordering:</strong> Visit our website to browse a tempting menu of beverages and snacks. Place your order and pay online with just a few clicks.</li>
+            <li><strong>Innovative Pickup System:</strong> Arrive at our coffee shop and use the touchscreen to enter your unique order code. The automated shelf box will open to reveal your freshly prepared order.</li>
+            <li><strong>Behind-the-Scenes Magic:</strong> Our skilled baristas and chefs meticulously prepare all coffee and snacks behind the scenes, ensuring each order is made to perfection.</li>
+        </ul>
+    </section>
 </body>
 </html>
