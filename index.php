@@ -1,3 +1,9 @@
+<?php
+  require_once 'config.php';
+  session_start();
+  $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
+  $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +23,7 @@
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
             </ul>
-        <a href="loginandregister.php" class="action_btn">Login</a>
+        <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -27,7 +33,7 @@
             <li><a href="menu.php">Menu</a></li>
             <li><a href="location.php">Find Us</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="loginandregister.php" class="action_btn">Login</a></li>
+            <li><a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a></li>
         </div>
     </header>
 
