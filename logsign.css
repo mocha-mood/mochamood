@@ -150,6 +150,20 @@ form.sign-in-form {
   transition-delay: 0.4s;
 }
 
+.message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  width: 60%;
+  max-width: 600px;
+  margin: 20px auto; 
+}
+
 .panel {
   display: flex;
   flex-direction: column;
@@ -366,5 +380,12 @@ form.sign-in-form {
   .container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .message {
+    width: 90%; /* Increase width for smaller screens */
+    font-size: 14px; /* Adjust font size */
   }
 }
