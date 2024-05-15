@@ -41,9 +41,11 @@
     <h1 class="h1-loc">Feeling lost? We got you!</h1>
     <div class="main-content-loc">
         <div class="left-content-loc">
-           
-            <!-- Additional left content can go here -->
+            <div class="map-responsive"> 
+                <iframe src="https://www.google.com.qa/maps/d/embed?mid=1MSgnkrdjiznqqHHrOSmoLTBAjfp1snk&ehbc=2E312F"></iframe>  
+            </div> 
         </div>
+
         <div class="right-content-loc">
             <div class="container-loc">
                 <h1 class="h1-loc">Our Locations</h1>
