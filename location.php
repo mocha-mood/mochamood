@@ -37,7 +37,24 @@
     </header>
 
     <script src="menutoggle.js"></script>
+   
+    <h1 class="h1-loc">Feeling lost? We got you!</h1>
+    <div class="main-content-loc">
+        <div class="left-content-loc">
+           
+            <!-- Additional left content can go here -->
+        </div>
+        <div class="right-content-loc">
+            <div class="container-loc">
+                <h1 class="h1-loc">Our Locations</h1>
+                <ul class="location-list">   
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=10+Kilonkallio,+Espoo,+Finland"> Kilo </a></li><br><br>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=4+Mirjankuja,+Espoo,+Finland">Matinkylä</a></li><br><br>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=55+Jokipoikasenkaari,+Helsinki,+Finland">Helsinki</a></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
 
-    <h1><br>LOCATIONS NEARDBY OR IN GENERAL HERE</h1>
 </body>
 </html>
