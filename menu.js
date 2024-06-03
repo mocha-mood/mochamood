@@ -1,4 +1,4 @@
-// Function to fetch JSON data
+
 async function fetchProducts() {
     try {
         const response = await fetch('http://tietokanta.dy.fi:8000/mochamood/jsonformat.php');
@@ -10,11 +10,14 @@ async function fetchProducts() {
     }
 }
 
-// Function to display products in the HTML
+
+function formatProductName(productName) {
+    return productName.toLowerCase().replace(/\s+/g, '-') + '.webp';
+}
+
 function displayProducts(products, containerId) {
     const productList = document.getElementById(containerId);
-    productList.innerHTML = ''; // Clear existing content
-
+    productList.innerHTML = ''; 
     if (products.length === 0) {
         productList.innerHTML = '<p>No products found.</p>';
         return;
@@ -23,17 +26,18 @@ function displayProducts(products, containerId) {
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
+        const imageName = formatProductName(product.product_name);
         productDiv.innerHTML = `
-            <h2>${product.name}</h2>
-            <p>Price: $${product.price}</p>
-            <p>Description: ${product.description}</p>
+            <img src="images/${imageName}" alt="${product.product_name}">
+            <h2>${product.product_name}</h2>
+            <p>Price: €${product.price} ${product.currency}</p>
         `;
         productList.appendChild(productDiv);
     });
 }
 
-// Fetch and display products when the page loads
+
 document.addEventListener('DOMContentLoaded', async () => {
     const products = await fetchProducts();
     displayProducts(products, 'product-list');
-});
+})

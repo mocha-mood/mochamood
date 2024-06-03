@@ -2,13 +2,13 @@
 
 <?php
 
-$servername = "d2server";
+$host = 'localhost';
 $username = "mochamood";
 $password = "voipulla";
 $dbname = "cafe";
 $table = "product";
 
-$conn = newmysqli($servername, $usernamr, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
