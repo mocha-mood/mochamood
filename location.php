@@ -1,3 +1,9 @@
+<?php
+  require_once 'config.php';
+  session_start();
+  $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
+  $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +22,7 @@
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
             </ul>
-        <a href="loginandregister.php" class="action_btn">Login</a>
+        <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -26,12 +32,31 @@
             <li><a href="menu.php">Menu</a></li>
             <li><a href="location.php">Find Us</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="loginandregister.php" class="action_btn">Login</a></li>
+            <li><a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a></li>
         </div>
     </header>
 
     <script src="menutoggle.js"></script>
+   
+    <h1 class="h1-loc">Feeling lost? We got you!</h1>
+    <div class="main-content-loc">
+        <div class="left-content-loc">
+            <div class="map-responsive"> 
+                <iframe src="https://www.google.com.qa/maps/d/embed?mid=1MSgnkrdjiznqqHHrOSmoLTBAjfp1snk&ehbc=2E312F"></iframe>  
+            </div> 
+        </div>
 
-    <h1><br>LOCATIONS NEARDBY OR IN GENERAL HERE</h1>
+        <div class="right-content-loc">
+            <div class="container-loc">
+                <h1 class="h1-loc">Our Locations</h1>
+                <ul class="location-list">   
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=10+Kilonkallio,+Espoo,+Finland"> Kilo </a></li><br><br>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=4+Mirjankuja,+Espoo,+Finland">Matinkylä</a></li><br><br>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=55+Jokipoikasenkaari,+Helsinki,+Finland">Helsinki</a></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

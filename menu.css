@@ -119,31 +119,17 @@ header{
     justify-content: center;
 }
 
-/*SECTIONS*/
-.background_section {
-    background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
-    background-size: cover; 
-    background-position: center; 
-    padding: 100px; 
-    color: white; 
-  }
-
-.basic_section{
-    text-align: center; 
-    padding: 100px; 
-    color: #402218; 
-}
-
-/*SECTION CONTENTS*/
-section#content{
-    height: calc(100vh - 60px);
+/*SEARCH BOX*/
+.search-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    color: white;
+    margin-top: 2rem;
 }
+
+input {
+    font-size: 1rem;
+}
+
 
 /*FOOTER*/
 footer{
@@ -276,90 +262,30 @@ footer p{
 }
 
 
-/*ABOUT US STYLE*/
 
-#introduction {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+.zone {
+    cursor: pointer;
+    color: #fff;
+    font-size: 2em;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    transition: all 0.3s linear;
 }
 
-/*LOCATION CONTENT STYLE*/
-
-.main-content-loc {
-    display: flex;
-    flex-wrap: wrap;
+.grid-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
-.left-content-loc,
-.right-content-loc {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.right-content-loc {
-    background-color: #F5CCA0;
-}
-
-/* Responsive location */
-@media (max-width: 768px) {
-    .left-content-loc, .right-content-loc {
-        flex: 100%;
-        max-width: 100%;
-    }
-}
-
-.container-loc {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 25px;
-}
-
-.h1-loc {
-    color: #994D1C;
-    text-align: center;
-}
-
-.location-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.location-list li {
-    margin-bottom: 20px;
-}
-
-.location-list li a {
-    color: #E48F45;
-    text-decoration: none;
-    display: block;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    transition: background-color 0.5s ease;
-}
-
-.location-list li a:hover {
-    background-color: #F5CCA0;
-}
-
-.map-responsive{
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
-}
-
-.map-responsive iframe{
-    left: 0;
-    top: 0;
-    height: 100%;
+.box > img {
     width: 100%;
-    position: absolute;
-    border: 0;
 }
+
+.box {
+    background-color: #C68B59;
+    padding: 1fr;
+    margin: 20px;
+}
+

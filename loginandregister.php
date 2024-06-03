@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+
+if(isset($_SESSION['id'])) {
+    header("Location: index.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +28,7 @@
 
         <?php
           require_once 'config.php';
-          if(isset($_POST['submit'])){
+          if(isset($_POST['login_submit'])){
             $email = mysqli_real_escape_string($conn,$_POST['email']);
             $password = mysqli_real_escape_string($conn,$_POST['password']);
 
@@ -32,17 +43,17 @@
             header("Location: menu.php");
             exit();
          }else{
-          echo "<div class='message'>
-           <p>Wrong Email or Password</p>
-           </div> <br>";
-           echo "<a href='index.php'><button class='btn'>Try again</button>";
-        
+          echo "<div class='message' >
+          <p>Wrong Email or Password. 
+          <a href='loginandregister.php' class='try-again-link'>Try again</a>
+          </p>
+         </div>";
         }
 
         }else{
         ?>
 
-          <form action="" class="sign-in-form" method="post">
+          <form action="loginandregister.php" class="sign-in-form" method="post" id="login">
             <h2 class="title">Log in</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -52,7 +63,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="password" id="password" autocomplete="off" placeholder="Password" required />
             </div>
-            <input type="submit" name="submit" value="Sign in" class="btn solid" required />
+            <input type="submit" name="login_submit" value="Submit" class="btn solid" required />
           </form>
 
         <?php } ?>
@@ -60,7 +71,7 @@
         <?php
 require_once 'config.php';
 
-if(isset($_POST['submit'])){
+if(isset($_POST['register_submit'])){
 
   $usernamereg = mysqli_real_escape_string($conn, $_POST['username']);
   $emailreg = mysqli_real_escape_string($conn, $_POST['email']);
@@ -68,18 +79,16 @@ if(isset($_POST['submit'])){
 
   $queryreg = "INSERT INTO users (username, email, password) VALUES ('$usernamereg', '$emailreg', '$passwordreg')";
   if(mysqli_query($conn, $queryreg)){
-    // Registration successful
-    header("Location: loginandregister.php"); // Redirect to login page
+    header("Location: loginandregister.php"); 
     exit();
   } else {
-    // Registration failed
     echo "Error: " . $queryreg . "<br>" . mysqli_error($conn);
   }
 }
 
 mysqli_close($conn);
 ?>
-          <form action="loginandregister.php" class="sign-up-form" method="post" id="register">
+          <form action="" class="sign-up-form" method="post" id="register">
             <h2 class="title">Register</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -93,7 +102,7 @@ mysqli_close($conn);
               <i class="fas fa-lock"></i>
               <input type="password" name="password" placeholder="Password" required />
             </div>
-            <input type="submit" name="submit" class="btn" value="Sign up" />
+            <input type="submit" name="register_submit" class="btn" value="Submit" />
         </div>
       </div>
 
