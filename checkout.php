@@ -1,4 +1,6 @@
 <?php
+  require_once 'config.php';
+  session_start();
   $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
   $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
 ?>
