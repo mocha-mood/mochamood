@@ -1,7 +1,7 @@
 // Function to fetch JSON data
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost/get_products.php');
+        const response = await fetch('http://tietokanta.dy.fi:8000/mochamood/jsonformat.php');
         const products = await response.json();
         return products;
     } catch (error) {
