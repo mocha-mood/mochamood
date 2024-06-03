@@ -53,6 +53,14 @@
                 </div>
             </div>
 
+            <div class="right-bar">
+                <p><span>Subtotal</span> <span>€26.60</span></p>
+                <hr>
+                <p><span>Tax(5%)</span> <span>€1.33</span></p>
+                <hr>
+                <p><span>Total</span> <span>€27.93</span></p>
+            </div>
+
         </div>
     </div>
 </body>
