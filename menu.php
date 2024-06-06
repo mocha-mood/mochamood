@@ -38,17 +38,21 @@
 
     <script src="menutoggle.js"></script>
 
+    <div class="search-wrapper">
+        <label for="search" >Search Product</label>
+        <input type="search" id="search">
+    </div>
+
     <section> 
         <h1><br>MENU ITEMS HERE</h1>
     </section>
-    <div class="zone grid-wrapper">
-        <div class="box zone"><img src="images/latte.webp" alt="Latte"></div>
-        <div class="box zone"><img src="images/capuccino.webp" alt="Cappuccino"></div>
-        <div class="box zone"><img src="images/white-coffee.webp" alt="White Coffee"></div>
-        <div class="box zone"><img src="images/expresso-macchiato.webp" alt="Espresso Macchiato"></div>
-        <div class="box zone"><img src="images/expresso.webp" alt="Espresso"></div>
+    <div class="zone grid-wrapper" id="product-list">
+    <script src="menu.js"></script>
+    
     </div>
     
+
+  
     
 </body>
 </html>
