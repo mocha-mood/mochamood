@@ -39,7 +39,7 @@
     <script src="menutoggle.js"></script>
 
     <div class="search-wrapper">
-        <label for="search" >Search Coffee</label>
+        <label for="search" >Search Product</label>
         <input type="search" id="search">
     </div>
 

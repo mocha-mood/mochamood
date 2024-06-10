@@ -40,7 +40,7 @@ if(isset($_SESSION['id'])) {
             $_SESSION['id'] = $userrow['id'];
             $_SESSION['username'] = $userrow['username'];
             $_SESSION['valid'] = $userrow['email'];
-            header("Location: menu.php");
+            header("Location: index.php");
             exit();
          }else{
           echo "<div class='message' >
