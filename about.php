@@ -14,6 +14,7 @@
     <title>About</title>
 </head>
 <body>
+    <div class="contentwrapper-about">
     <header>
         <div class="navbar">
             <div class="logo"><a href="index.php">MOCHA MOOD</a></div>
@@ -37,7 +38,7 @@
     </header>
 
     <script src="menutoggle.js"></script>
-
+    
     <header>
         <h1>Welcome to Mochamood</h1>
         <p>Introducing a fresh take on coffee shops!</p>
@@ -62,6 +63,9 @@
         <h2>Our Commitment to Sustainability</h2>
         <p>At Mochamood, sustainability is key. We use eco-friendly materials and support local suppliers to minimize our environmental impact.</p>
     </section>
+
+    </div>
+    
     <footer id="footer-about">
         <p>For more information, contact us at <a href="contact@mochamood.com">contact@mochamood.com</a> or visit our website. Follow us on social media for updates and special offers.</p>
     </footer>

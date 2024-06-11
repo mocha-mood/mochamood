@@ -48,7 +48,7 @@
 
         <div class="right-content-loc">
             <div class="container-loc">
-                <h1 class="h1-loc">Our Locations</h1>
+                <h1 class="h1-loc">Our other branches, Welcome!</h1>
                 <ul class="location-list">   
                     <li><a href="https://www.google.com/maps/search/?api=1&query=10+Kilonkallio,+Espoo,+Finland"> Kilo </a></li><br><br>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=4+Mirjankuja,+Espoo,+Finland">Matinkylä</a></li><br><br>

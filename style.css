@@ -11,6 +11,8 @@ body{
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 body,input{
@@ -374,8 +376,8 @@ footer{
     position: relative;
     width: 100%;
     background: #402218;
-    min-height: 100px;
-    padding: 20px 50px;
+    min-height: 200px;
+    padding: 50px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -766,4 +768,17 @@ footer p{
     width: 100%;
     position: absolute;
     border: 0;
+}
+
+.footer-about{
+    background-color: #402218;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.contentwrapper-about{
+    flex: 1;
 }
