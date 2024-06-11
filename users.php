@@ -27,7 +27,6 @@ $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="logout.php">Log out</a></li>
             </ul>
             <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
@@ -39,7 +38,6 @@ $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
             <li><a href="menu.php">Menu</a></li>
             <li><a href="location.php">Find Us</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="logout.php">Log out</a></li>
             <li><a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a></li>
         </div>
     </header>
@@ -56,16 +54,65 @@ $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
         if ($row = mysqli_fetch_assoc($result)) {
             $username = $row['username'];
             $email = $row['email'];
+            $password = $row['password'];
+            $date = $row['created_at'];
         }
         
     ?>
 
-    <section> 
-        <h1><br>USER INFO AND PAST ORDER INFO HERE(?)</h1>
+    <div class="containerprofile">
+        <div class="profile">
+            <div class="profile-header">
+                <img src="profile.png" alt="" class="profile-img">
+                <div class="profile-text-container">
+                    <h1 class="profile-title">Hello <?php echo $username ?>!</h1>
+                    <p class="profile-email"><?php echo $email ?></p>
+                </div>
+                </div>
+                
+                <div class="menu-profile">
+                    <a href="" class="menuprofile-link"><i class="fa-solid fa-circle-user menu-icon">Account</i></a>
+                    <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
+                    <a href="" class="menuprofile-link"><i class="fa-solid fa-gear menu-icon">Settings</i></a>
+                    <a href="logout.php" class="menuprofile-link"><i class="fa-solid fa-right-from-bracket menu-icon">Logout</i></a>
+                </div>
+            </div>
 
-        <p>Hi <b><?php echo $username ?></b>!</p>
-        <p>Your email is <b><?php echo $email ?></b></p>
-    </section>
+        <form class="account-profile">
+            <div class="account-profile-header">
+                <h1 class="account-title">Account Setting</h1>
+                <div class="btn-container-profile">
+                    <button class="btn-cancel-prof">Cancel</button>
+                    <button class="btn-save-prof">Save</button>
+                </div>
+            </div>
+
+            <div class="account-edit">
+                <div class="input-containerprof">
+                    <label>Username</label>
+                    <input type="text" placeholder="<?php echo $username ?>">
+                </div>
+
+                <div class="input-containerprof">
+                    <label>Email</label>
+                    <input type="email" placeholder="<?php echo $email ?>">
+                </div>
+
+                <div class="input-containerprof">
+                    <label>Password</label>
+                    <input type="password" placeholder="<?php echo $password ?>">
+                </div>
+
+                <div class="input-containerprof">
+                    <label>Account made</label>
+                    <p class="profile-email"><?php echo $date ?></p>
+                </div>
+
+                
+            </div>
+        </form>
+
+        </div>
     
 </body>
 </html>
