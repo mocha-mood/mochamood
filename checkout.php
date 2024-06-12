@@ -3,6 +3,7 @@
   session_start();
   $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
   $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
+  $is_logged_in = isset($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,9 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
+                <?php if ($is_logged_in): ?>
+                <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
+                <?php endif; ?>
             </ul>
         <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
@@ -41,7 +45,7 @@
     <script src="menutoggle.js"></script>
 
     <div class="wrapper">
-        <h1>Checkout Cart</h1>
+        <h1>Checkout</h1>
         <div class ="checkout">
             <div class="shop">
 
@@ -50,7 +54,7 @@
                     <div class="contentcheckout">
                         <h3>Latte</h3>
                         <h4>Price: €7</h4>
-                        <p class="unit">Quantity: <input value ="2"></p>
+                        <p class="unit"><input value ="2"></p>
                         <p class="btn-area-checkout">
                             <i class="fa fa-trash"></i>
                             <span class="btncheckout">Remove</span>
@@ -63,7 +67,7 @@
                     <div class="contentcheckout">
                         <h3>Cappuccino</h3>
                         <h4>Price: €4.60</h4>
-                        <p class="unit">Quantity: <input value ="1"></p>
+                        <p class="unit"><input value ="1"></p>
                         <p class="btn-area-checkout">
                             <i class="fa fa-trash"></i>
                             <span class="btncheckout">Remove</span>
@@ -76,7 +80,7 @@
                     <div class="contentcheckout">
                         <h3>White Coffee</h3>
                         <h4>Price: €15</h4>
-                        <p class="unit">Quantity: <input value ="3"></p>
+                        <p class="unit"><input value ="3"></p>
                         <p class="btn-area-checkout">
                             <i class="fa fa-trash"></i>
                             <span class="btncheckout">Remove</span>

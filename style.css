@@ -608,6 +608,7 @@ footer p{
     width: 50px;
     padding: 8px;
     text-align: center;
+    bottom: 20px;
 }
 
 .btn-area-checkout i{
@@ -773,7 +774,7 @@ footer p{
 .footer-about{
     background-color: #402218;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     position: sticky;
     bottom: 0;
     width: 100%;

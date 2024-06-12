@@ -3,6 +3,7 @@
   session_start();
   $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
   $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
+  $is_logged_in = isset($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,9 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
+                <?php if ($is_logged_in): ?>
+                <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
+                <?php endif; ?>
             </ul>
         <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
