@@ -117,6 +117,23 @@ $is_logged_in = isset($_SESSION['id']);
         </form>
 
         </div>
+        <footer id="footer-about">
+        <div class="footer-container">
+            <div class="footer-left">
+                <ul>
+                <a href="index.php">
+                <img src="logo.png" alt="Mocha Mood Logo">
+                </a>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <p>2024 Projekti | All right reserved</p>
+            </div>
+            <div class="footer-right">
+                    //add something here in the future 
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>

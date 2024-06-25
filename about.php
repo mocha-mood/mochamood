@@ -71,7 +71,22 @@
     </div>
     
     <footer id="footer-about">
-        <p>For more information, contact us at <a href="contact@mochamood.com">contact@mochamood.com</a> or visit our website. Follow us on social media for updates and special offers.</p>
+        <div class="footer-container">
+            <div class="footer-left">
+                <ul>
+                <a href="index.php">
+                <img src="logo.png" alt="Mocha Mood Logo">
+                </a>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <p>2024 Projekti | All right reserved</p>
+            </div>
+            <div class="footer-right">
+                    //add something here in the future 
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
