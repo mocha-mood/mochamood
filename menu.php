@@ -47,16 +47,38 @@
         <input type="search" id="search">
     </div>
 
+    <div class="button-wrapper">
+        <button id="show-all" class="action_btn">All</button>
+        <button id="show-coffees" class="action_btn">Coffees</button>
+        <button id="show-snacks" class="action_btn">Snacks</button>
+    </div>
+
     <section> 
         <h1><br>MENU ITEMS HERE</h1>
     </section>
-    <div class="zone grid-wrapper" id="product-list">
+    <div class="zone grid-wrapper" id="all-list"></div>
+    <div class="zone grid-wrapper" id="coffee-list" style="display: none;"></div>
+    <div class="zone grid-wrapper" id="snack-list" style="display: none;"></div>
+    
     <script src="menu.js"></script>
-    
-    </div>
-    
 
-  
+    <footer id="footer-about">
+        <div class="footer-container">
+            <div class="footer-left">
+                <ul>
+                <a href="index.php">
+                <img src="logo.png" alt="Mocha Mood Logo">
+                </a>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <p>2024 Projekti | All right reserved</p>
+            </div>
+            <div class="footer-right">
+                    //add something here in the future 
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>
