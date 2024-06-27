@@ -681,6 +681,14 @@ section#content{
     flex: 1;
 }
 
+.img_background{
+    width: 100%;
+    height: auto;
+    display: block;
+    background-position: center; 
+    padding: 100px;
+}
+
 /*SIMPLE FOOTER*/
 
 footer#footer-about {

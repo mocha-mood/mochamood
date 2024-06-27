@@ -42,6 +42,8 @@
 
     <script src="menutoggle.js"></script>
    
+
+    
     <h1 class="h1-loc">Feeling lost? We got you!</h1>
     <div class="main-content-loc">
         <div class="left-content-loc">
@@ -61,6 +63,8 @@
             </div>
         </div>
     </div>
+
+    <br><img src="lockers.png" class="img_background" alt="Lockers" >
 
     
 </body>
