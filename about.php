@@ -3,6 +3,7 @@
   session_start();
   $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
   $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
+  $is_logged_in = isset($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="about.css"> 
     <title>About</title>
 </head>
 <body>
+    <div class="contentwrapper-about">
     <header>
         <div class="navbar">
             <div class="logo"><a href="index.php">MOCHA MOOD</a></div>
@@ -21,6 +24,9 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
+                <?php if ($is_logged_in): ?>
+                <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
+                <?php endif; ?>
             </ul>
         <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
         <div class="toggle_btn">
@@ -37,7 +43,7 @@
     </header>
 
     <script src="menutoggle.js"></script>
-
+    
     <header>
         <h1>Welcome to Mochamood</h1>
         <p>Introducing a fresh take on coffee shops!</p>
@@ -62,8 +68,26 @@
         <h2>Our Commitment to Sustainability</h2>
         <p>At Mochamood, sustainability is key. We use eco-friendly materials and support local suppliers to minimize our environmental impact.</p>
     </section>
+
+    </div>
+    
     <footer id="footer-about">
-        <p>For more information, contact us at <a href="contact@mochamood.com">contact@mochamood.com</a> or visit our website. Follow us on social media for updates and special offers.</p>
+        <div class="footer-container">
+            <div class="footer-left">
+                <ul>
+                <a href="index.php">
+                <img src="logo.png" alt="Mocha Mood Logo">
+                </a>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <p>2024 Projekti | All right reserved</p>
+            </div>
+            <div class="footer-right">
+                    
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>

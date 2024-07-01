@@ -27,6 +27,7 @@ if(isset($_SESSION['id'])) {
         <div class="signin-signup">
 
         <?php
+        /* Login Function*/
           require_once 'config.php';
           if(isset($_POST['login_submit'])){
             $email = mysqli_real_escape_string($conn,$_POST['email']);
@@ -69,6 +70,7 @@ if(isset($_SESSION['id'])) {
         <?php } ?>
 
         <?php
+        /* Register Function*/
 require_once 'config.php';
 
 if(isset($_POST['register_submit'])){
