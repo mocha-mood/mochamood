@@ -1,8 +1,7 @@
 <?php
-
 session_start();
 require_once 'config.php';
-if(!isset($_SESSION['id'])) {
+if (!isset($_SESSION['id'])) {
     header("Location: loginandregister.php");
     exit;
 }
@@ -49,9 +48,7 @@ $is_logged_in = isset($_SESSION['id']);
     <script src="menutoggle.js"></script>
 
     <?php
-
-        $id = $_SESSION['id']; 
-
+        $id = $_SESSION['id'];
         $query = "SELECT * FROM users WHERE id = '$id'";
         $result = mysqli_query($conn, $query);
 
@@ -61,7 +58,6 @@ $is_logged_in = isset($_SESSION['id']);
             $password = $row['password'];
             $date = $row['created_at'];
         }
-        
     ?>
 
     <div class="containerprofile">
@@ -72,52 +68,51 @@ $is_logged_in = isset($_SESSION['id']);
                     <h1 class="profile-title">Hello <?php echo $username ?>!</h1>
                     <p class="profile-email"><?php echo $email ?></p>
                 </div>
-                </div>
-                
-                <div class="menu-profile">
-                    <a href="" class="menuprofile-link"><i class="fa-solid fa-circle-user menu-icon">Account</i></a>
-                    <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
-                    <a href="" class="menuprofile-link"><i class="fa-solid fa-gear menu-icon">Settings</i></a>
-                    <a href="logout.php" class="menuprofile-link"><i class="fa-solid fa-right-from-bracket menu-icon">Logout</i></a>
-                </div>
             </div>
+                
+            <div class="menu-profile">
+                <a href="" class="menuprofile-link"><i class="fa-solid fa-circle-user menu-icon">Account</i></a>
+                <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
+                <a href="" class="menuprofile-link"><i class="fa-solid fa-gear menu-icon">Settings</i></a>
+                <a href="logout.php" class="menuprofile-link"><i class="fa-solid fa-right-from-bracket menu-icon">Logout</i></a>
+            </div>
+        </div>
 
-        <form class="account-profile">
+        <form id="account-profile-form" class="account-profile" action="updateusers.php" method="post">
             <div class="account-profile-header">
                 <h1 class="account-title">Account Setting</h1>
                 <div class="btn-container-profile">
-                    <button class="btn-cancel-prof">Cancel</button>
-                    <button class="btn-save-prof">Save</button>
+                    <button type="button" class="btn-cancel-prof">Cancel</button>
+                    <button type="button" class="btn-save-prof" onclick="document.getElementById('account-profile-form').submit();">Save</button>
                 </div>
             </div>
 
             <div class="account-edit">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="input-containerprof">
                     <label>Username</label>
-                    <input type="text" placeholder="<?php echo $username ?>">
+                    <input type="text" name="username" value="<?php echo $username; ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Email</label>
-                    <input type="email" placeholder="<?php echo $email ?>">
+                    <input type="email" name="email" value="<?php echo $email; ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Password</label>
-                    <input type="password" placeholder="<?php echo $password ?>">
+                    <input type="text" name="password" value="<?php echo $password; ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Account made</label>
                     <p class="profile-email"><?php echo $date ?></p>
                 </div>
-
-                
             </div>
         </form>
+    </div>
 
-        </div>
-        <footer id="footer-about">
+    <footer id="footer-about">
         <div class="footer-container">
             <div class="footer-left">
                 <ul>
@@ -134,6 +129,5 @@ $is_logged_in = isset($_SESSION['id']);
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
