@@ -9,6 +9,11 @@ if (!isset($_SESSION['id'])) {
 $button_text = isset($_SESSION['id']) ? "Profile" : "Login";
 $button_link = isset($_SESSION['id']) ? "users.php" : "loginandregister.php";
 $is_logged_in = isset($_SESSION['id']);
+
+$update_message = isset($_SESSION['update_message']) ? $_SESSION['update_message'] : '';
+
+unset($_SESSION['update_message']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,5 +134,12 @@ $is_logged_in = isset($_SESSION['id']);
             </div>
         </div>
     </footer>
+
+    <?php if ($update_message): ?>
+    <script>
+        alert("<?php echo $update_message; ?>");
+    </script>
+    <?php endif; ?>
+    
 </body>
 </html>
