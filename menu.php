@@ -42,9 +42,13 @@
 
     <script src="menutoggle.js"></script>
 
+    <section> 
+        <h1 style="text-align:center"><br>FRESHLY MADE COFFEE AND SNACKS</h1>
+    </section>
+
     <div class="search-wrapper">
-        <label for="search" >Search Product</label>
-        <input type="search" id="search">
+        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+        <input type="search" id="search" placeholder="Search product...">
     </div>
 
     <div class="button-wrapper">
@@ -53,9 +57,7 @@
         <button id="show-snacks" class="action_btn">Snacks</button>
     </div>
 
-    <section> 
-        <h1><br>MENU ITEMS HERE</h1>
-    </section>
+  
     <div class="zone grid-wrapper" id="all-list"></div>
     <div class="zone grid-wrapper" id="coffee-list" style="display: none;"></div>
     <div class="zone grid-wrapper" id="snack-list" style="display: none;"></div>
