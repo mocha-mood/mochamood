@@ -53,18 +53,18 @@
         </div>
 
         <div class="right-content-loc">
-            <div class="container-loc">
-                <h1 class="h1-loc">Our other branches, Welcome!</h1>
-                <ul class="location-list">   
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=10+Kilonkallio,+Espoo,+Finland"> Kilo </a></li><br><br>
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=4+Mirjankuja,+Espoo,+Finland">Matinkylä</a></li><br><br>
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=55+Jokipoikasenkaari,+Helsinki,+Finland">Helsinki</a></li>
-                </ul> 
-            </div>
+                <img src="steps.png" alt="123">
         </div>
     </div>
 
-    <br><img src="lockers.png" class="img_background" alt="Lockers" ><br>
+    <div class="container-loc">
+                <h1 class="h1-loc">Our other branches, Welcome!</h1>
+                <ul class="location-list">   
+                    <li><a href="https://maps.app.goo.gl/wATD4oehiMRHdmM19"> Savonkatu </a></li><br><br>
+                    <li><a href="https://maps.app.goo.gl/NhDZkMJo21U8zgPNA">Hattulantie</a></li><br><br>
+                    <li><a href="https://maps.app.goo.gl/qZAb8hkum5MSyEft8">Teollisuuskatu</a></li>
+                </ul> 
+    </div>
 
     <footer id="footer-about">
         <div class="footer-container">
