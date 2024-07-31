@@ -128,7 +128,9 @@ header{
     background-position: center; 
     padding: 100px; 
     color: white; 
+    background-color: #00000076;
   }
+
 
 .basic_section{
     text-align: center; 

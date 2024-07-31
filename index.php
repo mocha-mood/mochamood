@@ -43,12 +43,13 @@
 
     <main>
         <section class= background_section id="content">
-            <h1>Its coffee time</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Mollitia excepturi vitae harum veniam veritatis architecto, <br>consequuntur saepe recusandae blanditiis. Quia nemo similique voluptatem. <br>Necessitatibus illo, est ut magni quas ducimus.</p>
+            <h1>Introducing a Fresh Take on Coffee Shops</h1>
+            <p>We're excited to launch a unique coffee shop experience <br>that blends the convenience of online ordering with the pleasure of enjoying freshly made coffee and snacks. <br>Our vision is to revolutionize the traditional coffee shop model by introducing a seamless, <br>cashier-free service that prioritizes efficiency and customer satisfaction.</p>
         </section>
 
         <section class="basic_section">
-            <h1>sample coffee menus</h1>
+            <h1>Our best sellers!</h1>
+            <p> Insert three most bought items here</p>
         </section>
     </main>
 
