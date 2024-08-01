@@ -43,13 +43,18 @@
     <script src="menutoggle.js"></script>
    
 
-    
+    <div class="map-responsive"> 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13345.068770078418!2d24.924385723658123!3d60.184765199773445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920983009007af%3A0xb8c1f1d5aaecfc2a!2sStadin%20ammatti-%20ja%20aikuisopisto%2C%20Sturenkatu!5e0!3m2!1sen!2sfi!4v1718122712649!5m2!1sen!2sfi" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+    </div> 
+
     <h1 class="h1-loc">Feeling lost? We got you!</h1>
     <div class="main-content-loc">
         <div class="left-content-loc">
-            <div class="map-responsive"> 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13345.068770078418!2d24.924385723658123!3d60.184765199773445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920983009007af%3A0xb8c1f1d5aaecfc2a!2sStadin%20ammatti-%20ja%20aikuisopisto%2C%20Sturenkatu!5e0!3m2!1sen!2sfi!4v1718122712649!5m2!1sen!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
-            </div> 
+        <ul class="location-list">   
+                    <li><a href="https://maps.app.goo.gl/wATD4oehiMRHdmM19"> Savonkatu </a></li><br><br>
+                    <li><a href="https://maps.app.goo.gl/NhDZkMJo21U8zgPNA">Hattulantie</a></li><br><br>
+                    <li><a href="https://maps.app.goo.gl/qZAb8hkum5MSyEft8">Teollisuuskatu</a></li>
+            </ul> 
         </div>
 
         <div class="right-content-loc">
@@ -58,12 +63,6 @@
     </div>
 
     <div class="container-loc">
-                <h1 class="h1-loc">Our other branches, Welcome!</h1>
-                <ul class="location-list">   
-                    <li><a href="https://maps.app.goo.gl/wATD4oehiMRHdmM19"> Savonkatu </a></li><br><br>
-                    <li><a href="https://maps.app.goo.gl/NhDZkMJo21U8zgPNA">Hattulantie</a></li><br><br>
-                    <li><a href="https://maps.app.goo.gl/qZAb8hkum5MSyEft8">Teollisuuskatu</a></li>
-                </ul> 
     </div>
 
     <footer id="footer-about">
