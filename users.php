@@ -76,9 +76,8 @@ unset($_SESSION['update_message']);
             </div>
                 
             <div class="menu-profile">
-                <a href="" class="menuprofile-link"><i class="fa-solid fa-circle-user menu-icon">Account</i></a>
-                <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
                 <a href="" class="menuprofile-link"><i class="fa-solid fa-gear menu-icon">Settings</i></a>
+                <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
                 <a href="logout.php" class="menuprofile-link"><i class="fa-solid fa-right-from-bracket menu-icon">Logout</i></a>
             </div>
         </div>
