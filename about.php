@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="style.css">
     <title>About</title>
 </head>
 <body>
@@ -57,7 +58,7 @@
         </div>
 
     
-       
+        <div class="promise card">
         <div class="image-text-content" >
             <div  class="right">
                 <img src="./images/aboutimages/coffeevision.jpg" alt="Our vision picture" />
@@ -67,7 +68,8 @@
                 <p>We're excited to launch a unique coffee shop experience that blends the convenience of online ordering with the pleasure of enjoying freshly made coffee and snacks. Our vision is to revolutionize the traditional coffee shop model by introducing a seamless, cashier-free service that prioritizes efficiency and customer satisfaction.</p>          
             </div>
         </div>                                    
-        
+        </div>
+
         <div class="card works">
             <section>
                 <h2>How It Works</h2>
