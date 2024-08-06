@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'config.php';
+
 if (!isset($_SESSION['id'])) {
     header("Location: loginandregister.php");
     exit;
@@ -14,7 +15,22 @@ $update_message = isset($_SESSION['update_message']) ? $_SESSION['update_message
 
 unset($_SESSION['update_message']);
 
+// Fetch user details
+$id = $_SESSION['id'];
+$query = "SELECT * FROM users WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($row = $result->fetch_assoc()) {
+    $username = $row['username'];
+    $email = $row['email'];
+    $password = $row['password'];
+    $date = $row['created_at'];
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,26 +68,13 @@ unset($_SESSION['update_message']);
 
     <script src="menutoggle.js"></script>
 
-    <?php
-        $id = $_SESSION['id'];
-        $query = "SELECT * FROM users WHERE id = '$id'";
-        $result = mysqli_query($conn, $query);
-
-        if ($row = mysqli_fetch_assoc($result)) {
-            $username = $row['username'];
-            $email = $row['email'];
-            $password = $row['password'];
-            $date = $row['created_at'];
-        }
-    ?>
-
     <div class="containerprofile">
         <div class="profile">
             <div class="profile-header">
                 <img src="profile.png" alt="" class="profile-img">
                 <div class="profile-text-container">
-                    <h1 class="profile-title">Hello <?php echo $username ?>!</h1>
-                    <p class="profile-email"><?php echo $email ?></p>
+                    <h1 class="profile-title">Hello <?php echo htmlspecialchars($username); ?>!</h1>
+                    <p class="profile-email"><?php echo htmlspecialchars($email); ?></p>
                 </div>
             </div>
                 
@@ -92,30 +95,59 @@ unset($_SESSION['update_message']);
             </div>
 
             <div class="account-edit">
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                 <div class="input-containerprof">
                     <label>Username</label>
-                    <input type="text" name="username" value="<?php echo $username; ?>" required>
+                    <input type="text" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Email</label>
-                    <input type="email" name="email" value="<?php echo $email; ?>" required>
+                    <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Password</label>
-                    <input type="text" name="password" value="<?php echo $password; ?>" required>
+                    <input type="text" name="password" value="<?php echo htmlspecialchars($password); ?>" required>
                 </div>
 
                 <div class="input-containerprof">
                     <label>Account made</label>
-                    <p class="profile-email"><?php echo $date ?></p>
+                    <p class="profile-email"><?php echo htmlspecialchars($date); ?></p>
                 </div>
             </div>
         </form>
     </div>
 
+    <h2>Your Orders</h2>
+    <?php
+    // Fetch user orders
+    $query = "SELECT * FROM orders WHERE user_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result) {
+        while ($roworders = $result->fetch_assoc()) {
+            $orderdetails = $roworders['order_details'];
+            $orderdate = $roworders['order_date'];
+            $totalamount = $roworders['total_amount'];
+            $status = $roworders['status'];
+            ?>
+            <div class="order">
+                <h1 class="account-title"><?php echo htmlspecialchars($orderdetails); ?></h1>
+                <h1 class="account-title"><?php echo htmlspecialchars($orderdate); ?></h1>
+                <h1 class="account-title"><?php echo htmlspecialchars($totalamount); ?></h1>
+                <h1 class="account-title"><?php echo htmlspecialchars($status); ?></h1>
+            </div>
+            <?php
+        }
+    } else {
+        echo "Error fetching orders: " . $stmt->error;
+    }
+    ?>
+    
     <footer id="footer-about">
         <div class="footer-container">
             <div class="footer-left">
