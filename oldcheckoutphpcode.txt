@@ -1,0 +1,57 @@
+ <div class="wrapper">
+        <h1>Checkout</h1>
+        <div class ="checkout">
+            <div class="shop">
+
+                <div class="boxcheckout">
+                    <img src="images/latte.webp" alt="Latte">
+                    <div class="contentcheckout">
+                        <h3>Latte</h3>
+                        <h4>Price: €7</h4>
+                        <p class="unit"><input value ="2"></p>
+                        <p class="btn-area-checkout">
+                            <i class="fa fa-trash"></i>
+                            <span class="btncheckout">Remove</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="boxcheckout">
+                    <img src="images/capuccino.webp" alt="Cappuccino">
+                    <div class="contentcheckout">
+                        <h3>Cappuccino</h3>
+                        <h4>Price: €4.60</h4>
+                        <p class="unit"><input value ="1"></p>
+                        <p class="btn-area-checkout">
+                            <i class="fa fa-trash"></i>
+                            <span class="btncheckout">Remove</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="boxcheckout">
+                    <img src="images/white-coffee.webp" alt="White Coffee">
+                    <div class="contentcheckout">
+                        <h3>White Coffee</h3>
+                        <h4>Price: €15</h4>
+                        <p class="unit"><input value ="3"></p>
+                        <p class="btn-area-checkout">
+                            <i class="fa fa-trash"></i>
+                            <span class="btncheckout">Remove</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-bar">
+                <p><span>Subtotal</span> <span>€26.60</span></p>
+                <hr>
+                <p><span>Tax(5%)</span> <span>€1.33</span></p>
+                <hr>
+                <p><span>Total</span> <span>€27.93</span></p>
+
+                <a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
+            </div>
+
+        </div>
+    </div>

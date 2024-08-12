@@ -43,8 +43,8 @@
 
     <main>
         <section class= background_section id="content">
-            <h1>Introducing a Fresh Take on Coffee Shops</h1>
-            <p>We're excited to launch a unique coffee shop experience <br>that blends the convenience of online ordering with the pleasure of enjoying freshly made coffee and snacks. <br>Our vision is to revolutionize the traditional coffee shop model by introducing a seamless, <br>cashier-free service that prioritizes efficiency and customer satisfaction.</p>
+            <h1>Perk Up Your Day with Every Sip</h1>
+            <p>WWhether you need a morning boost or an afternoon pick-me-up, our freshly roasted coffee is here to keep you energized and smiling.</p>
         </section>
 
         <section class="basic_section">

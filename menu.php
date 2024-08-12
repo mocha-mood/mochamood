@@ -8,11 +8,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="menu.css">
     <title>Menu</title>
+    <link rel="stylesheet" href="menu.css">
 </head>
 <body>
     <header>
@@ -26,10 +25,10 @@
                 <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
                 <?php endif; ?>
             </ul>
-        <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
-        <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+            <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
 
         <div class="dropdown_menu">
@@ -39,8 +38,6 @@
             <li><a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a></li>
         </div>
     </header>
-
-    <script src="menutoggle.js"></script>
 
     <section> 
         <h1 style="text-align:center"><br>FRESHLY MADE COFFEE AND SNACKS</h1>
@@ -57,30 +54,36 @@
         <button id="show-snacks" class="action_btn">Snacks</button>
     </div>
 
-  
+    
+    <div class="cart-wrapper" style="display: flex; justify-content: center; margin-top: 20px;">
+        <div id="cart-summary" style="display: none;">
+            <span>Items in Cart: <span id="cart-count">0</span></span>
+            <button id="checkout-button" class="action_btn">Go to Checkout</button>
+        </div>
+    </div>
+
     <div class="zone grid-wrapper" id="all-list"></div>
     <div class="zone grid-wrapper" id="coffee-list" style="display: none;"></div>
     <div class="zone grid-wrapper" id="snack-list" style="display: none;"></div>
-    
-    <script src="menu.js"></script>
 
     <footer id="footer-about">
         <div class="footer-container">
             <div class="footer-left">
                 <ul>
-                <a href="index.php">
-                <img src="logo.png" alt="Mocha Mood Logo">
-                </a>
+                    <a href="index.php">
+                        <img src="logo.png" alt="Mocha Mood Logo">
+                    </a>
                 </ul>
             </div>
             <div class="footer-center">
                 <p>2024 Projekti | All right reserved</p>
             </div>
             <div class="footer-right">
-                    //add something here in the future 
+                
             </div>
         </div>
     </footer>
     
+    <script src="menu.js"></script>
 </body>
 </html>
