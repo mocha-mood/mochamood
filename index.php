@@ -44,7 +44,7 @@
     <main>
         <section class= background_section id="content">
             <h1>Perk Up Your Day with Every Sip</h1>
-            <p>WWhether you need a morning boost or an afternoon pick-me-up, our freshly roasted coffee is here to keep you energized and smiling.</p>
+            <p>Whether you need a morning boost or an afternoon pick-me-up, our freshly roasted coffee is here to keep you energized and smiling.</p>
         </section>
 
         <section class="basic_section">

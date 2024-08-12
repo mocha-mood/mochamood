@@ -119,7 +119,8 @@ if ($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-    <h2>Your Orders</h2>
+    <h2 class="section-title">Your Orders</h2>
+    <div class="order-container">
     <?php
     // Fetch user orders
     $query = "SELECT * FROM orders WHERE user_id = ?";
@@ -135,11 +136,23 @@ if ($row = $result->fetch_assoc()) {
             $totalamount = $roworders['total_amount'];
             $status = $roworders['status'];
             ?>
-            <div class="order">
-                <h1 class="account-title"><?php echo htmlspecialchars($orderdetails); ?></h1>
-                <h1 class="account-title"><?php echo htmlspecialchars($orderdate); ?></h1>
-                <h1 class="account-title"><?php echo htmlspecialchars($totalamount); ?></h1>
-                <h1 class="account-title"><?php echo htmlspecialchars($status); ?></h1>
+         <div class="order-item">
+                <div class="order-details">
+                    <label class="order-label">Order:</label>
+                    <p class="order-info"><?php echo htmlspecialchars($orderdetails); ?></p>
+                </div>
+                <div class="order-details">
+                    <label class="order-label">Date:</label>
+                    <p class="order-info"><?php echo htmlspecialchars($orderdate); ?></p>
+                </div>
+                <div class="order-details">
+                    <label class="order-label">Total:</label>
+                    <p class="order-info"><?php echo htmlspecialchars($totalamount); ?></p>
+                </div>
+                <div class="order-details">
+                    <label class="order-label">Status:</label>
+                    <p class="order-info"><?php echo htmlspecialchars($status); ?></p>
+                </div>
             </div>
             <?php
         }
@@ -147,6 +160,7 @@ if ($row = $result->fetch_assoc()) {
         echo "Error fetching orders: " . $stmt->error;
     }
     ?>
+    </div>
     
     <footer id="footer-about">
         <div class="footer-container">
