@@ -58,7 +58,7 @@
         </div>
 
         <div class="right-content-loc">
-                <img src="steps.png" alt="123">
+              
         </div>
     </div>
 

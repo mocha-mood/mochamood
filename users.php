@@ -130,31 +130,36 @@ if ($row = $result->fetch_assoc()) {
     $result = $stmt->get_result();
 
     if ($result) {
-        while ($roworders = $result->fetch_assoc()) {
-            $orderdetails = $roworders['order_details'];
-            $orderdate = $roworders['order_date'];
-            $totalamount = $roworders['total_amount'];
-            $status = $roworders['status'];
-            ?>
-         <div class="order-item">
-                <div class="order-details">
-                    <label class="order-label">Order:</label>
-                    <p class="order-info"><?php echo htmlspecialchars($orderdetails); ?></p>
+        if ($result->num_rows > 0) {
+            while ($roworders = $result->fetch_assoc()) {
+                $orderdetails = $roworders['order_details'];
+                $orderdate = $roworders['order_date'];
+                $totalamount = $roworders['total_amount'];
+                $status = $roworders['status'];
+                ?>
+                <div class="order-item">
+                    <div class="order-details">
+                        <label class="order-label">Order:</label>
+                        <p class="order-info"><?php echo htmlspecialchars($orderdetails); ?></p>
+                    </div>
+                    <div class="order-details">
+                        <label class="order-label">Date:</label>
+                        <p class="order-info"><?php echo htmlspecialchars($orderdate); ?></p>
+                    </div>
+                    <div class="order-details">
+                        <label class="order-label">Total:</label>
+                        <p class="order-info"><?php echo htmlspecialchars($totalamount); ?></p>
+                    </div>
+                    <div class="order-details">
+                        <label class="order-label">Status:</label>
+                        <p class="order-info"><?php echo htmlspecialchars($status); ?></p>
+                    </div>
                 </div>
-                <div class="order-details">
-                    <label class="order-label">Date:</label>
-                    <p class="order-info"><?php echo htmlspecialchars($orderdate); ?></p>
-                </div>
-                <div class="order-details">
-                    <label class="order-label">Total:</label>
-                    <p class="order-info"><?php echo htmlspecialchars($totalamount); ?></p>
-                </div>
-                <div class="order-details">
-                    <label class="order-label">Status:</label>
-                    <p class="order-info"><?php echo htmlspecialchars($status); ?></p>
-                </div>
-            </div>
-            <?php
+                <?php
+            }
+        } else {
+            // No orders found
+            echo "<p>Uh oh! No orders have been made yet</p>";
         }
     } else {
         echo "Error fetching orders: " . $stmt->error;
