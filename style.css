@@ -326,6 +326,7 @@ header{
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
 }
 
 .dropdown_menu.open{
@@ -444,8 +445,10 @@ section#content{
     border: 0;
 }
 
-.h1-loc {
+.h2-loc{
     text-align: center;
+    color: #994D1C;
+    margin-bottom: 20px;
 }
 
 .container-loc {

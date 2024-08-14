@@ -50,6 +50,7 @@
 
     <div class="main-content-loc">
         <div class="left-content-loc">
+        <h2 class="h2-loc">Our branches can be found in the Helsinki Region</h2>
         <ul class="location-list">   
                     <li><a href="https://maps.app.goo.gl/wATD4oehiMRHdmM19"> Savonkatu </a></li><br><br>
                     <li><a href="https://maps.app.goo.gl/NhDZkMJo21U8zgPNA">Hattulantie</a></li><br><br>
@@ -57,9 +58,6 @@
             </ul> 
         </div>
 
-        <div class="right-content-loc">
-              
-        </div>
     </div>
 
     <div class="container-loc">
