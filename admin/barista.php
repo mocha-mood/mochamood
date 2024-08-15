@@ -1,0 +1,49 @@
+<?php
+  /*require_once 'config.php';
+  session_start();
+  
+  if (!isset($_SESSION['id'])) {
+    header("Location: loginandregister.php");
+    exit;
+    }
+    */
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="admin.css">
+    <title>Barista Page</title>
+</head>
+<body>
+
+  <header>
+        <div class="navbar">
+            <div class="logo"><a href="barista.php">MOCHA MOOD</a></div>
+            <ul class="links">
+                <li><a href="barista.php">Orders</a></li>
+                <li><a href="rules.php">Rules</a></li>
+            </ul>
+            <a href="baristaprof.php" class="action_btn">Hi! *barista name*</a>
+
+            <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+        <div class="dropdown_menu">
+          <li><a href="barista.php">Orders</a></li>
+          <li><a href="rules.php">Rules</a></li>
+          <li><a href="baristaprof.php" class="action_btn">Profile</a></li>
+        </div>
+
+  </header>
+
+        <script src="menutoggle.js"></script>
+
+</body>
+</html>

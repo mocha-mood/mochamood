@@ -36,6 +36,22 @@ if(isset($_SESSION['id'])) {
             $userquery = mysqli_query($conn,"SELECT * FROM users WHERE email='$email' AND password='$password' ") or die("Error");
             $userrow = mysqli_fetch_assoc($userquery);
     
+          /*Admin Login */
+          if (!is_array($userrow) || empty($userrow)) {
+            $adminquery = mysqli_query($conn, "SELECT * FROM admin WHERE email='$email' AND password='$password'") or die("Error");
+            $adminrow = mysqli_fetch_assoc($adminquery);
+
+
+            if (is_array($adminrow) && !empty($adminrow)) {
+                $_SESSION['id'] = $adminrow['id'];
+                $_SESSION['username'] = $adminrow['username'];
+                $_SESSION['valid'] = $adminrow['email'];
+                header("Location:admin/barista.php"); 
+                exit();
+            }
+          }
+
+          /*Customer Login */
 
           if(is_array($userrow) && !empty($userrow)){
             $_SESSION['id'] = $userrow['id'];
