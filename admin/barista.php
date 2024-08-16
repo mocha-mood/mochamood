@@ -1,12 +1,12 @@
 <?php
-  /*require_once 'config.php';
   session_start();
-  
+  require_once '../config.php';
+
   if (!isset($_SESSION['id'])) {
-    header("Location: loginandregister.php");
+    header("Location: ../loginandregister.php");
     exit;
     }
-    */
+/*make it so that only admins can access this*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,5 +45,25 @@
 
         <script src="menutoggle.js"></script>
 
+      <h1 id="title">Orders</h1>
+
+
+      <div class="containcolumn">
+
+            <div id="inprog">
+              <h3>In Progress</h3>
+            </div>
+
+            <div id="ready">
+              <h3>Ready</h3>
+            </div>
+
+            <div id="received">
+              <h3>Received</h3>
+            </div>
+
+      </div>
+
+      
 </body>
 </html>

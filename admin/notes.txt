@@ -1,0 +1,322 @@
+Figma css code :
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+
+
+/* Mocha Mood */
+
+position: absolute;
+width: 186px;
+height: 36px;
+left: 48px;
+top: 39px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* In progress */
+
+position: absolute;
+width: 405px;
+height: 685px;
+left: 60px;
+top: 289px;
+
+background: #C68B59;
+border-radius: 30px;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 336px;
+height: 139px;
+left: 34px;
+top: 41px;
+
+background: #FFFFFF;
+border-radius: 30px;
+
+
+/* Ellipse 1 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 56px;
+top: 59px;
+
+border: 2px solid #000000;
+
+
+/* order no and details here */
+
+position: absolute;
+width: 182px;
+height: 72px;
+left: 111px;
+top: 71px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* Ready */
+
+position: absolute;
+width: 405px;
+height: 685px;
+left: 517px;
+top: 289px;
+
+background: #865439;
+border-radius: 30px;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 336px;
+height: 139px;
+left: 34px;
+top: 42px;
+
+background: #FFFFFF;
+border-radius: 30px;
+
+
+/* Ellipse 2 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 55px;
+top: 59px;
+
+border: 2px solid #000000;
+
+
+/* order no and details here */
+
+position: absolute;
+width: 182px;
+height: 72px;
+left: 110px;
+top: 71px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* Received */
+
+position: absolute;
+width: 405px;
+height: 685px;
+left: 974px;
+top: 289px;
+
+background: #402218;
+border-radius: 30px;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 336px;
+height: 139px;
+left: 35px;
+top: 44px;
+
+background: #FFFFFF;
+border-radius: 30px;
+
+
+/* Ellipse 2 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 59px;
+top: 62px;
+
+border: 2px solid #000000;
+
+
+/* order no and details here */
+
+position: absolute;
+width: 182px;
+height: 72px;
+left: 114px;
+top: 74px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* ORDERS */
+
+position: absolute;
+width: 120px;
+height: 36px;
+left: 660px;
+top: 164px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+border: 1px solid #000000;
+
+
+/* In Progress */
+
+position: absolute;
+width: 160px;
+height: 36px;
+left: 182px;
+top: 235px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #C68B59;
+
+border: 1px solid #C68B59;
+
+
+/* Ready */
+
+position: absolute;
+width: 89px;
+height: 36px;
+left: 675px;
+top: 235px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #865439;
+
+border: 1px solid #865439;
+
+
+/* Received */
+
+position: absolute;
+width: 131px;
+height: 36px;
+left: 1111px;
+top: 235px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #402218;
+
+border: 1px solid #402218;
+
+
+/* Orders */
+
+position: absolute;
+width: 97px;
+height: 36px;
+left: 595px;
+top: 39px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* Hi! *name* */
+
+position: absolute;
+width: 155px;
+height: 36px;
+left: 1242px;
+top: 32px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
+
+
+/* Rules */
+
+position: absolute;
+width: 77px;
+height: 36px;
+left: 768px;
+top: 39px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+
