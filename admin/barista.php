@@ -26,6 +26,7 @@
             <ul class="links">
                 <li><a href="barista.php">Orders</a></li>
                 <li><a href="rules.php">Rules</a></li>
+                <a href="logout.php" class="cart_icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </ul>
             <a href="baristaprof.php" class="action_btn">Hi! *barista name*</a>
 
@@ -38,6 +39,7 @@
         <div class="dropdown_menu">
           <li><a href="barista.php">Orders</a></li>
           <li><a href="rules.php">Rules</a></li>
+          <li><a href="logout.php">Log out</a></li>
           <li><a href="baristaprof.php" class="action_btn">Profile</a></li>
         </div>
 

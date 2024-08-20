@@ -87,25 +87,25 @@ if(isset($_SESSION['id'])) {
 
         <?php
         /* Register Function*/
-require_once 'config.php';
+        require_once 'config.php';
 
-if(isset($_POST['register_submit'])){
+        if(isset($_POST['register_submit'])){
 
-  $usernamereg = mysqli_real_escape_string($conn, $_POST['username']);
-  $emailreg = mysqli_real_escape_string($conn, $_POST['email']);
-  $passwordreg = mysqli_real_escape_string($conn, $_POST['password']);
+          $usernamereg = mysqli_real_escape_string($conn, $_POST['username']);
+          $emailreg = mysqli_real_escape_string($conn, $_POST['email']);
+          $passwordreg = mysqli_real_escape_string($conn, $_POST['password']);
 
-  $queryreg = "INSERT INTO users (username, email, password) VALUES ('$usernamereg', '$emailreg', '$passwordreg')";
-  if(mysqli_query($conn, $queryreg)){
-    header("Location: loginandregister.php"); 
-    exit();
-  } else {
-    echo "Error: " . $queryreg . "<br>" . mysqli_error($conn);
-  }
-}
+          $queryreg = "INSERT INTO users (username, email, password) VALUES ('$usernamereg', '$emailreg', '$passwordreg')";
+          if(mysqli_query($conn, $queryreg)){
+            header("Location: loginandregister.php"); 
+            exit();
+          } else {
+            echo "Error: " . $queryreg . "<br>" . mysqli_error($conn);
+          }
+        }
 
-mysqli_close($conn);
-?>
+        mysqli_close($conn);
+        ?>
           <form action="" class="sign-up-form" method="post" id="register">
             <h2 class="title">Register</h2>
             <div class="input-field">
