@@ -129,8 +129,7 @@ mysqli_close($conn);
           <div class="content">
             <h3>New here ?</h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
+              No account? No problem! Sign up is free and easy to do by pressing the button bellow!
             </p>
             <button class="btn transparent" id="sign-up-btn">
               Sign up
@@ -142,8 +141,7 @@ mysqli_close($conn);
           <div class="content">
             <h3>One of us ?</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
+              Are you already part of the coffee club? Just sign in and you're set!
             </p>
             <button class="btn transparent" id="sign-in-btn">
               Sign in
