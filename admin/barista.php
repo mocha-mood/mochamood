@@ -49,6 +49,56 @@
 
       <h1 id="title">Orders</h1>
 
+      <div class="containertime">
+    <div class="time">
+        <div class="hms"></div>
+        <div class="date"></div>
+    </div>
+
+    <script>
+        function updateTime() {
+            var dateInfo = new Date();
+
+            var hr = (dateInfo.getHours() < 10) ? "0" + dateInfo.getHours() : dateInfo.getHours(),
+                min = (dateInfo.getMinutes() < 10) ? "0" + dateInfo.getMinutes() : dateInfo.getMinutes(),
+                sec = (dateInfo.getSeconds() < 10) ? "0" + dateInfo.getSeconds() : dateInfo.getSeconds();
+
+            var currentTime = hr + ":" + min + ":" + sec;
+            document.getElementsByClassName("hms")[0].innerHTML = currentTime;
+
+            var dow = [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                month = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ],
+                day = dateInfo.getDate();
+
+            var currentDate = dow[dateInfo.getDay()] + ", " + month[dateInfo.getMonth()] + " " + day;
+            document.getElementsByClassName("date")[0].innerHTML = currentDate;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</div>
 
       <div class="containcolumn">
 
