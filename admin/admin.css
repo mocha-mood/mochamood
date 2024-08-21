@@ -135,6 +135,16 @@ a {
     gap: 10px;
 }
 
+#orderdetails{
+    color: #402218;
+    padding: 10px;
+    text-align: center;
+    height: auto;
+    width: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
 #inprog{
     color: #ffffff;
     padding: 10px;

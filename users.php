@@ -122,7 +122,7 @@ if ($row = $result->fetch_assoc()) {
     <h2 class="section-title">Your Orders</h2>
     <div class="order-container">
     <?php
-    // Fetch user orders
+    
     $query = "SELECT * FROM orders WHERE user_id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $id);

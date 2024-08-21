@@ -98,22 +98,59 @@
     </script>
 </div>
 
-      <div class="containcolumn">
 
-            <div id="inprog">
-              <h3>In Progress</h3>
-            </div>
+<?php
+function displayOrdersByStatus($conn, $status) {
+    $query = "SELECT * FROM orders WHERE status = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $status);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-            <div id="ready">
-              <h3>Ready</h3>
-            </div>
+    if ($result && $result->num_rows > 0) {
+        while ($roworders = $result->fetch_assoc()) {
+            $orderdetails = $roworders['order_details'];
+            $orderdate = $roworders['order_date'];
+            $totalamount = $roworders['total_amount'];
 
-            <div id="received">
-              <h3>Received</h3>
-            </div>
+            // Display the order details
+            echo "<div>";
+            echo "<p><strong>Order Details:</strong> $orderdetails</p>";
+            echo "<p><strong>Order Date:</strong> $orderdate</p>";
+            echo "<p><strong>Total Amount:</strong> $$totalamount</p>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>Your only order right now is to relax!</p>";
+    }
 
-      </div>
+    $stmt->close();
+}
+?>
 
+<div class="containcolumn">
+    <div id="inprog">
+        <h3>In Progress</h3>
+         <div id="orderdetails"><?php displayOrdersByStatus($conn, "In Progress"); ?></div>
+    </div>
+
+    <div id="ready">
+        <h3>Ready</h3>
+        <div id="orderdetails"><?php displayOrdersByStatus($conn, "Ready"); ?></div>
+    </div>
+
+    <div id="received">
+        <h3>Received</h3>
+
+        <div id="orderdetails">        
+        <?php 
+        displayOrdersByStatus($conn, "Received"); 
+        $conn->close();
+        ?>
+        </div>
+
+    </div>
+</div>
       
 </body>
 </html>
