@@ -2,7 +2,7 @@
   session_start();
   require_once '../config.php';
 
-  if (!isset($_SESSION['id'])) {
+  if (!isset($_SESSION['adminid'])) {
     header("Location: ../loginandregister.php");
     exit;
     }
@@ -101,7 +101,7 @@
 
 <?php
 function displayOrdersByStatus($conn, $status) {
-    $query = "SELECT * FROM orders WHERE status = ?";
+    $query = "SELECT * FROM orders WHERE status = ? AND DATE(order_date) = CURDATE()";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $status);
     $stmt->execute();
@@ -109,15 +109,25 @@ function displayOrdersByStatus($conn, $status) {
 
     if ($result && $result->num_rows > 0) {
         while ($roworders = $result->fetch_assoc()) {
+            $orderId = $roworders['id'];
             $orderdetails = $roworders['order_details'];
             $orderdate = $roworders['order_date'];
             $totalamount = $roworders['total_amount'];
 
-            // Display the order details
-            echo "<div>";
+            echo "<div class='order-container'>";
+            echo "<form method='POST' action='updatestatus.php'>";
+            echo "<input type='hidden' name='order_id' value='$orderId'>";
             echo "<p><strong>Order Details:</strong> $orderdetails</p>";
             echo "<p><strong>Order Date:</strong> $orderdate</p>";
             echo "<p><strong>Total Amount:</strong> $$totalamount</p>";
+
+            if($status == "In Progress"){
+                echo "<button type='submit' name='update_status' value='Ready'>Confirm as Ready</button>";
+            }elseif($status == "Ready"){
+                echo "<button type='submit' name='update_status' value='Received'>Confirm as Received</button>";
+            }
+
+            echo "</form>";
             echo "</div>";
         }
     } else {

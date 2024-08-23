@@ -43,9 +43,10 @@ if(isset($_SESSION['id'])) {
 
 
             if (is_array($adminrow) && !empty($adminrow)) {
-                $_SESSION['id'] = $adminrow['id'];
+                $_SESSION['adminid'] = $adminrow['id'];
                 $_SESSION['username'] = $adminrow['username'];
                 $_SESSION['valid'] = $adminrow['email'];
+                $_SESSION['is_admin'] = true;
                 header("Location:admin/barista.php"); 
                 exit();
             }
@@ -57,6 +58,7 @@ if(isset($_SESSION['id'])) {
             $_SESSION['id'] = $userrow['id'];
             $_SESSION['username'] = $userrow['username'];
             $_SESSION['valid'] = $userrow['email'];
+            $_SESSION['is_admin'] = false;
             header("Location: index.php");
             exit();
          }else{

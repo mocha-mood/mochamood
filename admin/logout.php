@@ -1,9 +1,10 @@
 <?php
-    session_start();
+session_start();
 
     if(isset($_GET['confirm']) && $_GET['confirm'] === 'true') {
+        $_SESSION = array();
         session_destroy();
-        header("Location: index.php");
+        header("Location: /index.php"); 
         exit();
     }
 ?>
@@ -20,7 +21,7 @@
         function confirmLogout() {
             var confirmLogout = confirm("Are you sure you want to log out?");
             if (confirmLogout) {
-                window.location.href = "logout.php?confirm=true";
+                window.location.href = "http://tietokanta.dy.fi:8000/mochamood/";
             } else {
                 window.location.href = "http://tietokanta.dy.fi:8000/mochamood/admin/barista.php";
             }
