@@ -788,12 +788,25 @@ footer#footer-about {
 }
 
 /* Container for all orders */
+.orderdisplay{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    padding: 15px;
+}
+
 .order-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 15px;
-    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive ordercontainer */
+@media (max-width: 768px) {
+    .order-container{
+        flex-direction: column;
+    }
 }
 
 /* Individual order item styling */

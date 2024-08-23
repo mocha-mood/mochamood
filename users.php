@@ -120,6 +120,7 @@ if ($row = $result->fetch_assoc()) {
     </div>
 
     <h2 class="section-title">Your Orders</h2>
+    <div class="orderdisplay">
     <div class="order-container">
     <?php
     
@@ -148,7 +149,7 @@ if ($row = $result->fetch_assoc()) {
                     </div>
                     <div class="order-details">
                         <label class="order-label">Total:</label>
-                        <p class="order-info"><?php echo htmlspecialchars($totalamount); ?></p>
+                        <p class="order-info">€<?php echo htmlspecialchars($totalamount); ?></p>
                     </div>
                     <div class="order-details">
                         <label class="order-label">Status:</label>
@@ -165,6 +166,7 @@ if ($row = $result->fetch_assoc()) {
         echo "Error fetching orders: " . $stmt->error;
     }
     ?>
+    </div>
     </div>
     
     <footer id="footer-about">

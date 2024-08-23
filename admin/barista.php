@@ -119,7 +119,7 @@ function displayOrdersByStatus($conn, $status) {
             echo "<input type='hidden' name='order_id' value='$orderId'>";
             echo "<p><strong>Order Details:</strong> $orderdetails</p>";
             echo "<p><strong>Order Date:</strong> $orderdate</p>";
-            echo "<p><strong>Total Amount:</strong> $$totalamount</p>";
+            echo "<p><strong>Total Amount:</strong> €$totalamount</p>";
 
             if($status == "In Progress"){
                 echo "<button type='submit' name='update_status' value='Ready'>Confirm as Ready</button>";
