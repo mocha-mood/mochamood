@@ -245,3 +245,106 @@ a {
         font-size: 15pt; 
     }
 }
+
+/* Card Styles */
+.flex-container {
+    flex: 1;
+    padding: 1rem;
+}
+
+.card {
+    background-color: #F5CCA0;
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card h1, .card h2, .card p {
+    color: #402218;
+    margin-bottom: 1rem;
+}
+
+.card h1 {
+    font-size: 3rem;
+}
+
+.card h2 {
+    font-size: 2rem;
+    color: #6B240C;
+}
+
+.card p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.card2{
+    background-color: #402218;
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card2 h1, .card2 h2, .card2 p {
+    color: #F5CCA0;
+    margin-bottom: 1rem;
+}
+
+.card2 h1 {
+    font-size: 3rem;
+}
+
+.card2 h2 {
+    font-size: 2rem;
+    color: #6B240C;
+}
+
+.card2 p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card2 ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card2 li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+@media (min-width: 680px) and (max-width: 1200px) {
+    .card {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .card2 {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
