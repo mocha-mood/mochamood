@@ -51,7 +51,43 @@
             <h1>Our best sellers!</h1>
             <p> Insert three most bought items here</p>
         </section>
-    </main>
+
+        <section class="Moochachatbox">
+        
+              
+    <div id="chatbox-toggle">Chat with us!</div><br><br/>
+
+
+    <div id="chatbox-container">
+        <iframe
+            width="100%"
+           height="100%"
+            frameborder="0"
+             src="https://denser.ai/u/embed/ed9aa632-e5ec-4139-bcfe-a23301704cd4">
+       </iframe>
+       <button id="close-chatbox">&times;</button>
+    </div>
+
+    <script>
+  
+        const chatboxToggle = document.getElementById('chatbox-toggle');
+        const chatboxContainer = document.getElementById('chatbox-container');
+        const closeChatbox = document.getElementById('close-chatbox');
+
+        chatboxToggle.addEventListener('click', () => {
+        chatboxContainer.style.display = 'block';
+        chatboxToggle.style.display = 'none';
+        });
+
+     closeChatbox.addEventListener('click', () => {
+        chatboxContainer.style.display = 'none';
+        chatboxToggle.style.display = 'block';
+        });
+    </script><br/><br/><br/><br/><br/><br/>        
+        </main>
+
+    
+
 
     <script src="menutoggle.js"></script>
 
@@ -79,5 +115,8 @@
       
         
     </footer>
+
+
+    
 </body>
 </html>
