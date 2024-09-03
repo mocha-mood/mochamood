@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #402218;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#title{
+    text-align: center;
+    color: #402218;
+}
+
+#cart-items {
+    padding: 20px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.cart-total {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: right;
+    border-top: 2px solid #C68B59;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #402218;
+}
+
+#checkout-button, #cancel-button {
+    background-color: #C68B59;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#checkout-button:hover, #cancel-button:hover {
+    background-color: white;
+    color: #C68B59;
+}
+
+#checkout-button:active, #cancel-button:active {
+    transform: scale(0.98);
+}
+
+#checkout-button:disabled, #cancel-button:disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/*HEADER*/
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar .logo a{
+    font-size: 2rem;
+    font-family: 'Luckiest Guy',cursive;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: #402218;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color:#C68B59;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    background-color:white;
+    color: #402218;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+/*DROPDOWN MENU*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 65px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 200px;
+}
+
+.dropdown_menu li {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*RESPONSIVE DESIGN FOR BODY AND NAVIGATION BAR*/
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+    footer .social_icon{
+        display: block;
+    }
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}

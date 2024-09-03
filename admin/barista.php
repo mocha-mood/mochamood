@@ -7,6 +7,7 @@
     exit;
     }
 /*make it so that only admins can access this*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,6 @@
                 <li><a href="rules.php">Rules</a></li>
                 <a href="logout.php" class="cart_icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </ul>
-            <a href="baristaprof.php" class="action_btn">Hi! *barista name*</a>
 
             <div class="toggle_btn">
             <i class="fa-solid fa-bars"></i>
@@ -40,7 +40,6 @@
           <li><a href="barista.php">Orders</a></li>
           <li><a href="rules.php">Rules</a></li>
           <li><a href="logout.php">Log out</a></li>
-          <li><a href="baristaprof.php" class="action_btn">Profile</a></li>
         </div>
 
   </header>

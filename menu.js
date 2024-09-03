@@ -1,3 +1,6 @@
+// Global cart array to store selected products
+let cart = [];
+
 // FETCH AND DISPLAY PRODUCTS
 async function fetchProducts() {
     try {
@@ -29,7 +32,7 @@ function displayProductsByCategory(products, category = 'all') {
     const allList = document.getElementById('all-list');
     const coffeeList = document.getElementById('coffee-list');
     const snackList = document.getElementById('snack-list');
-    const imageBasePath = 'http://tietokanta.dy.fi:8000/mochamood/images/'; 
+    const imageBasePath = 'http://tietokanta.dy.fi:8000/mochamood/images/';
 
     allList.innerHTML = '';
     coffeeList.innerHTML = '';
@@ -56,11 +59,21 @@ function displayProductsByCategory(products, category = 'all') {
                 <div class="product-details">
                     <h6>${product.product_name}</h6>
                     <p>Price: €${product.price} ${product.currency}</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             `;
+
             productDiv.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent the click from propagating to the document
-                toggleProductOptions(product, productDiv);
+                event.stopPropagation();
+                if (product.category === 'coffee') {
+                    toggleProductOptions(product, productDiv);
+                }
+            });
+
+            productDiv.querySelector('.add-to-cart-btn').addEventListener('click', (event) => {
+                event.stopPropagation();
+                const optionsContainer = productDiv.querySelector('.product-options');
+                addToCart(product, optionsContainer);
             });
 
             if (category === 'all') {
@@ -75,16 +88,12 @@ function displayProductsByCategory(products, category = 'all') {
 }
 
 function toggleProductOptions(product, productDiv) {
-    // Only show options for coffee products
-    if (product.category === 'snack') return;
-
     const existingOptions = productDiv.querySelector('.product-options');
     if (existingOptions) {
         existingOptions.remove();
         return;
     }
 
-    
     const optionsContainer = document.createElement('div');
     optionsContainer.className = 'product-options';
     optionsContainer.innerHTML = `
@@ -116,11 +125,10 @@ function toggleProductOptions(product, productDiv) {
             <label for="oat-${product.product_id}">Oat Milk</label>
 
             <input type="radio" id="diary-${product.product_id}" name="milk-${product.product_id}" value="diary">
-            <label for="diary-${product.product_id}">Diary Milk</label>
+            <label for="diary-${product.product_id}">Dairy Milk</label>
         </fieldset><br><br>
     `;
 
-    
     optionsContainer.addEventListener('click', (event) => {
         event.stopPropagation();
     });
@@ -131,7 +139,7 @@ function toggleProductOptions(product, productDiv) {
 function hideProductOptions() {
     const allOptionsContainers = document.querySelectorAll('.product-options');
     allOptionsContainers.forEach(container => {
-        container.style.display = 'none';
+        container.remove();
     });
 }
 
@@ -167,7 +175,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     products = categorizeProducts(products); 
     displayProductsByCategory(products, 'all'); 
 
-    // Show all products by default
     showCategory('all');
 
     const searchInput = document.getElementById('search');
@@ -175,7 +182,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         filterProducts(products, searchInput.value);
     });
 
-   
     document.getElementById('show-all').addEventListener('click', () => {
         displayProductsByCategory(products, 'all');
         showCategory('all');
@@ -190,11 +196,75 @@ document.addEventListener('DOMContentLoaded', async () => {
         showCategory('snack');
     });
 
-
     document.addEventListener('click', (event) => {
         const isClickInside = event.target.closest('.product.box.zone');
         if (!isClickInside) {
             hideProductOptions();
         }
     });
+});
+
+function addToCart(product, optionsContainer = null) {
+    let customizedProduct = { ...product, quantity: 1 }; 
+
+    if (product.category === 'coffee' && optionsContainer) {
+        const size = optionsContainer.querySelector(
+            `input[name="coffeeSize-${product.product_id}"]:checked`
+        )?.value;
+        const sugar = optionsContainer.querySelector(
+            `input[name="sugarQuantity-${product.product_id}"]:checked`
+        )?.value;
+        const milk = optionsContainer.querySelector(
+            `input[name="milk-${product.product_id}"]:checked`
+        )?.value;
+
+        if (!size || !sugar || !milk) {
+            alert('Please select all options before adding to cart.');
+            return;
+        }
+
+        
+        customizedProduct = { ...customizedProduct, size, sugar, milk };
+    }
+
+    
+    const existingProductIndex = cart.findIndex(
+        (item) =>
+            item.product_id === customizedProduct.product_id &&
+            item.size === customizedProduct.size &&
+            item.sugar === customizedProduct.sugar &&
+            item.milk === customizedProduct.milk
+    );
+
+    if (existingProductIndex > -1) {
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        cart.push(customizedProduct);
+    }
+
+    console.log('Cart before saving to localStorage:', cart);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    updateCartCount();
+    showCheckoutIcon();
+}
+
+
+function showCheckoutIcon() {
+    const checkoutIcon = document.querySelector('.cart_icon');
+    if (checkoutIcon) {
+        checkoutIcon.style.display = 'block';
+    }
+}
+
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+
+document.querySelector('.cart_icon').addEventListener('click', () => {
+    window.location.href = 'checkout.php';
 });

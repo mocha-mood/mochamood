@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
@@ -40,7 +41,9 @@
     </header>
 
     <section> 
-        <h1 style="text-align:center"><br>FRESHLY MADE COFFEE AND SNACKS</h1>
+        <h1 style="text-align:center"><?php 
+        if ($is_logged_in): echo "FRESHLY MADE COFFEE AND SNACKS"; else: echo "Please Login to Order";
+        ?><br><?php endif; ?></h1>
     </section>
 
     <div class="search-wrapper">
@@ -52,14 +55,6 @@
         <button id="show-all" class="action_btn">All</button>
         <button id="show-coffees" class="action_btn">Coffees</button>
         <button id="show-snacks" class="action_btn">Snacks</button>
-    </div>
-
-    
-    <div class="cart-wrapper" style="display: flex; justify-content: center; margin-top: 20px;">
-        <div id="cart-summary" style="display: none;">
-            <span>Items in Cart: <span id="cart-count">0</span></span>
-            <button id="checkout-button" class="action_btn">Go to Checkout</button>
-        </div>
     </div>
 
     <div class="zone grid-wrapper" id="all-list"></div>
