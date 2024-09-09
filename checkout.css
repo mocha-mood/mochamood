@@ -93,7 +93,12 @@ header{
     justify-content: space-between;
 }
 
-.navbar a {
+.navbar a,
+.dropdown_menu a {
+    text-decoration: none; 
+}
+
+.navbar ul {
     text-decoration: none;
 }
 
@@ -195,3 +200,4 @@ header{
         width: unset;
     }
 }
+

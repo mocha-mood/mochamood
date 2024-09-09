@@ -227,7 +227,6 @@ function addToCart(product, optionsContainer = null) {
         customizedProduct = { ...customizedProduct, size, sugar, milk };
     }
 
-    
     const existingProductIndex = cart.findIndex(
         (item) =>
             item.product_id === customizedProduct.product_id &&
@@ -242,13 +241,25 @@ function addToCart(product, optionsContainer = null) {
         cart.push(customizedProduct);
     }
 
-    console.log('Cart before saving to localStorage:', cart);
     localStorage.setItem('cart', JSON.stringify(cart));
 
     updateCartCount();
     showCheckoutIcon();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial setup
+    updateCartCount();
+});
+
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+        cartCount.textContent = totalItems;
+    }
+}
 
 function showCheckoutIcon() {
     const checkoutIcon = document.querySelector('.cart_icon');
