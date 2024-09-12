@@ -49,7 +49,7 @@ if ($row = $result->fetch_assoc()) {
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <?php if ($is_logged_in): ?>
-                <a href="checkout.html" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
+                <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
                 <?php endif; ?>
             </ul>
             <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>
@@ -80,7 +80,7 @@ if ($row = $result->fetch_assoc()) {
                 
             <div class="menu-profile">
                 <a href="" class="menuprofile-link"><i class="fa-solid fa-gear menu-icon">Settings</i></a>
-                <a href="" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
+                <a href="#orders-section" class="menuprofile-link"><i class="fa-solid fa-mug-saucer menu-icon">Orders</i></a>
                 <a href="logout.php" class="menuprofile-link"><i class="fa-solid fa-right-from-bracket menu-icon">Logout</i></a>
             </div>
         </div>
@@ -120,7 +120,7 @@ if ($row = $result->fetch_assoc()) {
     </div>
 
     <h2 class="section-title">Your Orders</h2>
-    <div class="orderdisplay">
+    <div id="orders-section" class="orderdisplay">
     <div class="order-container">
     <?php
     

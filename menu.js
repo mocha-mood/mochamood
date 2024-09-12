@@ -256,8 +256,16 @@ function updateCartCount() {
     const cartCount = document.getElementById('cart-count');
     if (cartCount) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-        cartCount.textContent = totalItems;
+
+        // Check if there are any items in the cart
+        if (cart.length > 0) {
+            cartCount.classList.add('red-dot'); // Add red dot class
+        } else {
+            cartCount.classList.remove('red-dot'); // Remove red dot if cart is empty
+        }
+
+        // Clear the text content as we only need to show the red dot
+        cartCount.textContent = '';
     }
 }
 
@@ -265,13 +273,6 @@ function showCheckoutIcon() {
     const checkoutIcon = document.querySelector('.cart_icon');
     if (checkoutIcon) {
         checkoutIcon.style.display = 'block';
-    }
-}
-
-function updateCartCount() {
-    const cartCount = document.getElementById('cart-count');
-    if (cartCount) {
-        cartCount.textContent = cart.length;
     }
 }
 

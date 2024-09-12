@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="code.css">
+    <title>Your Order Code</title>
+</head>
+<body>
+
+    <div class="code-container">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your locker and pin code are:</p>
+        <h2 id="locker"></h2>
+        <h2 id="order-code"></h2>
+        <a href="menu.php" class="action_btn">Back to Menu</a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderCodeDiv = document.getElementById('order-code');
+
+            function generateCode() {
+                return Math.floor(1000 + Math.random() * 9000).toString();
+            }
+
+            function displayOrderCode() {
+                const orderCode = generateCode();
+                orderCodeDiv.textContent = orderCode;
+            }
+
+            displayOrderCode();
+        });
+
+        document.getElementById("locker").innerHTML = "Locker: " +
+        (Math.floor(Math.random() * 10) + 1);
+    </script>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length > 0) {
+            fetch('save_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cart)
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Order saved:', data);
+                // Optionally clear cart from localStorage
+                localStorage.removeItem('cart');
+            })
+            .catch(error => console.error('Error saving order:', error));
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -507,3 +507,13 @@ footer#footer-about {
     text-align: center; 
     padding-top: 20%;
 }
+
+#cart-count.red-dot::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+}

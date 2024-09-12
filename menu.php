@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
@@ -26,7 +27,7 @@
                 <?php if ($is_logged_in): ?>
                 <a href="checkout.php" class="cart_icon">
                     <i class="fa-solid fa-basket-shopping"></i>
-                    <span id="cart-count" class="order-count"></span>
+                    <span id="cart-count" class="cart-count"></span>
                 </a>
                 <?php endif; ?>
             </ul>

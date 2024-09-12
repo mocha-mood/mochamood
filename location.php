@@ -23,7 +23,7 @@
                 <li><a href="location.php">Find Us</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <?php if ($is_logged_in): ?>
-                <a href="checkout.html" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
+                <a href="checkout.php" class="cart_icon"><i class="fa-solid fa-basket-shopping"></i></a>
                 <?php endif; ?>
             </ul>
         <a href="<?php echo $button_link; ?>" class="action_btn"><?php echo $button_text; ?></a>

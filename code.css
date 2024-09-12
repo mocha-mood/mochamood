@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
 }
@@ -17,6 +18,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a{
+    text-decoration: none;
 }
 
 h1 {
@@ -35,5 +40,22 @@ h2 {
     background-color: #402218;
     padding: 10px;
     border-radius: 5px;
-    display: inline-block;
+}
+.action_btn{
+    background-color:#402218;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    background-color:white;
+    color: #402218;
 }
