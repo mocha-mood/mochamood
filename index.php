@@ -49,7 +49,32 @@
 
         <section class="basic_section">
             <h1>Our best sellers!</h1>
-            <p> Insert three most bought items here</p>
+            <div class="best_sellers_container">
+
+                <div class="product_card">
+                    <a href="menu.php">
+                        <img src="images/expresso-macchiato.webp" alt="Espressomachiato">
+                        <h2>Espresso machiato</h2>
+                        <p>Price: €3.99</p>
+                    </a>
+                </div>
+
+                <div class="product_card">
+                    <a href="menu.php">
+                        <img src="images/large-meatpies.webp" alt="Large Meatpie">
+                        <h2>Large Meatpie</h2>
+                        <p>Price: €3.45</p>
+                    </a>
+                </div>
+
+                <div class="product_card">
+                    <a href="menu.php">
+                        <img src="images/latte.webp" alt="Latte">
+                        <h2>Latte</h2>
+                        <p>Price: €3.45</p>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section class="Moochachatbox">
